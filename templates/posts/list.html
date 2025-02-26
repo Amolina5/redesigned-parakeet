@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Player List{% endblock %}
+
+{% block content %}
+    <h2>Players and Stats</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Number</th>
+                <th>Games Played</th>
+                <th>Touchdowns</th>
+                <th>Yards</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in players %}
+                <tr>
+                    <td>{{ player.name }}</td>
+                    <td>{{ player.position }}</td>
+                    <td>{{ player.number }}</td>
+                    <td>{{ player.stats.games_played }}</td>
+                    <td>{{ player.stats.touchdowns }}</td>
+                    <td>{{ player.stats.yards }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

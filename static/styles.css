@@ -1,0 +1,148 @@
+/* Baltimore Ravens Theme for Django */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #241773; /* Ravens Purple */
+    color: #ffffff; /* Remember to update this color */
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+body:hover {
+    background-color: #1d1457; /* Darker Purple */
+}
+
+a {
+    color: #9e7c0c; /* Ravens Gold */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #d5b138; /* Light Gold */
+}
+
+/* Header Styles */
+header {
+    background-color: #000000; /* Black */
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    color: #9e7c0c; /* Ravens Gold */
+    font-size: 2.5em;
+    margin: 0;
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #000000; /* Black */
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #ffffff; /* Remember to update this color */
+    position: relative;
+}
+
+nav a:hover::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #9e7c0c; /* Ravens Gold */
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+/* Card Styles */
+.post-card {
+    background-color: #000000; /* Black */
+    color: #ffffff; /* Remember to update this color */
+    border: 2px solid #9e7c0c; /* Ravens Gold */
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.post-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #9e7c0c; /* Ravens Gold */
+    position: relative;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #9e7c0c; /* Ravens Gold */
+    bottom: -10px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+
+h2:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Button Styles */
+button {
+    background-color: #9e7c0c; /* Ravens Gold */
+    border: none;
+    color: #ffffff; /* Remember to update this color */
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #d5b138; /* Light Gold */
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000000; /* Black */
+    color: #ffffff; /* Remember to update this color */
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}

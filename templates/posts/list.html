@@ -1,29 +1,35 @@
 {% extends "base.html" %}
 
-{% block title %}Player List{% endblock %}
+{% block title %}Post List{% endblock %}
 
 {% block content %}
-    <h2>Players and Stats</h2>
-    <table>
+    <h2>Posts</h2>
+    <table class="table">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Number</th>
-                <th>Games Played</th>
-                <th>Touchdowns</th>
-                <th>Yards</th>
+                <th>Title</th>
+                <th>Subtitle</th>
+                <th>Author</th>
+                <th>Status</th>
+                <th>Created On</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            {% for player in players %}
+            {% for post in posts_list %}
                 <tr>
-                    <td>{{ player.name }}</td>
-                    <td>{{ player.position }}</td>
-                    <td>{{ player.number }}</td>
-                    <td>{{ player.stats.games_played }}</td>
-                    <td>{{ player.stats.touchdowns }}</td>
-                    <td>{{ player.stats.yards }}</td>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.subtitle }}</td>
+                    <td>{{ post.author }}</td>
+                    <td>{{ post.status.name }}</td>
+                    <td>{{ post.created_on }}</td>
+                    <td>
+                        <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">View</a>
+                        {% if user.is_authenticated and user == post.author %}
+                            <a href="{% url 'post_edit' post.pk %}" class="btn btn-secondary">Edit</a>
+                            <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">Delete</a>
+                        {% endif %}
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>

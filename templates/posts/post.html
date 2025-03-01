@@ -1,18 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %}Post page{% endblock title %}
+{% block title %}{{ post.title }}{% endblock title %}
 
 {% block content %}
-<h1>Post page</h1>
-<p>This is the post page</p>
+<h1>{{ post.title }}</h1>
+<p>{{ post.subtitle }}</p>
 <div class="card" style="width: 21rem;">
     <div class="card-body">
         <h5 class="card-title">{{ post.title }}</h5>
         <p class="card-text">{{ post.subtitle }}</p>
         <p class="card-text">{{ post.body }}</p>
-        <p class="card-text">{{ post.aurthor }}</p>
+        <p class="card-text">{{ post.author }}</p>
         <a href="#" class="btn btn-primary">View Post</a>
     </div>
 </div>
-
 {% endblock content %}

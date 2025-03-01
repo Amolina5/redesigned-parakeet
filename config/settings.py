@@ -35,23 +35,20 @@ ALLOWED_HOSTS = ["127.0.0.1", "localhost", ".herokuapp.com"]
 # Application definition
 
 INSTALLED_APPS = [
-    # built-in
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    "whiteNoise.runserver_nostatic",
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-    # Third-party
     'crispy_forms',
     'crispy_bootstrap5',
-    #mine
     'accounts',
     'posts',
     'pages',
-    
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

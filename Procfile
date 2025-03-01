@@ -1,0 +1,1 @@
+web: gubicorn config.wsgi --log-file -
